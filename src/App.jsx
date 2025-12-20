@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+
 const App = () => {
-
-    const [counter, setCounter] = useState(0)
-    const [data, setData] = useState(0)
-    
-    function logMessage(message){
-      console.log(message)
-    }
-    useEffect(()=>{
-      logMessage("useEffect chal rha hai Ake bar");
-    },[])
-    function loginMessage(){
-      console.log("dubara function chal rhi hai")
-    }
-    loginMessage();
-
-
-
-
-
-
+  const [num, setNum] = useState(0)
   return (
-    <div>
-      <h1>Introduction UseEffect</h1>
-      <button onClick={()=>{setCounter(counter+1)}}>Counter{counter}</button>
-      <button onClick={()=>{setData(data+1)}}>Counter{data}</button>
+    <div style={{textAlign: 'center', marginTop: '50px'}}>
+      <h2>Simple Counter </h2><br /><br />
+      <h3>{num}</h3>
+      <button onClick={()=>{
+        setNum(num + 1)
+      }} style={{marginTop:10,marginRight:10,padding:2,cursor:'pointer'}}>Increment Number</button>
+      <button onClick={()=>{
+        setNum(num == 0 ? 0 : num - 1)
+      }} style={{marginTop:10,padding:2,cursor:'pointer'}}>Decrement Number</button>
     </div>
   )
 }
